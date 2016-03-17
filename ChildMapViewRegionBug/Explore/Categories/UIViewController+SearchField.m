@@ -1,9 +1,7 @@
 //
 //  UIViewController+SearchField.m
-//  HomeSnap
 //
 //  Created by Scott Atkinson on 3/15/16.
-//  Copyright © 2016 Sawbuck Realty. All rights reserved.
 //
 
 #import "UIViewController+SearchField.h"
