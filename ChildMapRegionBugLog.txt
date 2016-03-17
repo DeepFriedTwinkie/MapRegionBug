@@ -1,0 +1,57 @@
+/* ********
+Following logging show INCORRECT geometry: 
+notice view and map rect aspect ratios are not the same 
+********
+*/
+
+2016-03-17 13:31:26.429 ChildMapViewRegionBug[11130:211651] 
+----------------------------------
+Child Map Region Changed
+View Aspect: 0.664526
+Visible Map Rect Aspect: 0.740608
+
+
+2016-03-17 13:31:29.626 ChildMapViewRegionBug[11130:211651] 
+----------------------------------
+Child Map Region Changed
+View Aspect: 0.664526
+Visible Map Rect Aspect: 0.740608
+
+
+2016-03-17 13:31:32.302 ChildMapViewRegionBug[11130:211651] 
+----------------------------------
+Child Map Region Changed
+View Aspect: 0.664526
+Visible Map Rect Aspect: 0.740608
+
+
+
+
+/* ********
+Following logging show CORRECT geometry: 
+notice view and map rect aspect ratios are the same 
+********
+*/
+
+
+2016-03-17 13:31:37.096 ChildMapViewRegionBug[11130:211651] 
+----------------------------------
+Map Region Changed
+View Aspect: 0.664526
+Visible Map Rect Aspect: 0.664526
+
+
+2016-03-17 13:31:39.597 ChildMapViewRegionBug[11130:211651] 
+----------------------------------
+Map Region Changed
+View Aspect: 0.664526
+Visible Map Rect Aspect: 0.664526
+
+
+2016-03-17 13:31:42.444 ChildMapViewRegionBug[11130:211651] 
+----------------------------------
+Map Region Changed
+View Aspect: 0.664526
+Visible Map Rect Aspect: 0.664526
+
+
