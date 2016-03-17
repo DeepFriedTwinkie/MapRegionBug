@@ -8,6 +8,8 @@
 
 #import "ExploreMapViewController.h"
 
+#import "ExploreCollectionViewController.h"
+
 #define UIColorFromRGB(rgbValue) ([UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
@@ -118,6 +120,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
 
     [self.mapview removeOverlay:self.lastRegionPolygon];
     [self addRegion:mapView.region];
+    
+    [self logMapInfo];
 }
 
 // ****** Views & Overlays ******
@@ -164,5 +168,21 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
     // Add it to the map
     [self.mapview addOverlay:self.lastRegionPolygon];
 }
+
+- (void) logMapInfo {
+    NSString * inParent = [self.parentViewController isKindOfClass:[ExploreCollectionViewController class]] ? @"Child Map" : @"Map";
+    
+    CGSize viewSize = self.mapview.frame.size;
+    MKMapSize mapRectSize = self.mapview.visibleMapRect.size;
+    
+    CGFloat viewRatio = viewSize.width / viewSize.height;
+    CGFloat rectRatio = mapRectSize.width / mapRectSize.height;
+    
+    NSLog(@"\n\n----------------------------------\n%@ Region Changed\nView Aspect:%f\nVisible Map Rect Aspect%f\n\n\n",
+          inParent,
+          viewRatio,
+          rectRatio);
+}
+
 
 @end
