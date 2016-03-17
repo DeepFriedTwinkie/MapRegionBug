@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iBi-4L-ekd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Explore Map View Controller-->
+        <scene sceneID="gcE-Zr-V6g">
+            <objects>
+                <viewController id="L70-QR-L6E" customClass="ExploreMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CjI-Du-cBB"/>
+                        <viewControllerLayoutGuide type="bottom" id="gdh-xJ-UbL"/>
+                    </layoutGuides>
+                    <view key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="5Ho-Sn-Axp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEk-6x-RzZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="L70-QR-L6E" id="ToP-AO-Egg"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MEk-6x-RzZ" firstAttribute="leading" secondItem="5Ho-Sn-Axp" secondAttribute="leading" id="3Dq-f6-K83"/>
+                            <constraint firstAttribute="bottom" secondItem="MEk-6x-RzZ" secondAttribute="bottom" id="PnI-tl-OPZ"/>
+                            <constraint firstItem="MEk-6x-RzZ" firstAttribute="top" secondItem="5Ho-Sn-Axp" secondAttribute="top" id="c7G-jq-h5d"/>
+                            <constraint firstAttribute="trailing" secondItem="MEk-6x-RzZ" secondAttribute="trailing" id="qEH-Wq-hAl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mHL-6j-CEf"/>
+                    <connections>
+                        <outlet property="mapview" destination="MEk-6x-RzZ" id="Naa-8A-yPJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byH-9V-5Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867.19999999999993" y="2156.5066666666667"/>
+        </scene>
+        <!--Explore Collection View Controller-->
+        <scene sceneID="RvS-1i-u5E">
+            <objects>
+                <viewController id="oiJ-Rv-hJ5" customClass="ExploreCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="flJ-P6-53j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="wbP-jG-keU">
+                            <size key="itemSize" width="106" height="106"/>
+                            <size key="headerReferenceSize" width="50" height="355"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapHeader" id="uwb-HH-BFE" customClass="AnimatingCollectionReusableView">
+                            <rect key="frame" x="0.0" y="64" width="320" height="355"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Na5-bv-q8O" appends="YES" id="hZd-Mk-FqX"/>
+                                <outletCollection property="gestureRecognizers" destination="Aju-HG-j23" appends="YES" id="sqM-mc-rRB"/>
+                                <outletCollection property="gestureRecognizers" destination="5JH-as-AYF" appends="YES" id="lxd-gx-g5G"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="oiJ-Rv-hJ5" id="bgC-w2-DpN"/>
+                            <outlet property="delegate" destination="oiJ-Rv-hJ5" id="xD7-f6-5XM"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="5GO-dM-aDZ">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="gnu-qC-xkX">
+                            <connections>
+                                <action selector="goToCustomSearch:" destination="oiJ-Rv-hJ5" id="fzI-pS-sWQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="flJ-P6-53j" id="C8E-nd-iOA"/>
+                        <outlet property="expandContractButton" destination="sZ6-tp-hWY" id="zd5-gH-euY"/>
+                        <outlet property="exploreMapContainerView" destination="4Nk-mO-j3T" id="Mdj-zc-Vkp"/>
+                        <outlet property="gotoUserLocationButton" destination="q9c-2n-HtP" id="QSh-9f-qst"/>
+                        <outlet property="mapPinchGesture" destination="Na5-bv-q8O" id="4FW-kV-yoX"/>
+                        <outlet property="mapSwipeGesture" destination="5JH-as-AYF" id="8ue-iN-3zi"/>
+                        <outlet property="mapTapGesture" destination="Aju-HG-j23" id="fVN-Uk-rcv"/>
+                        <outlet property="view" destination="flJ-P6-53j" id="fn7-yC-Yrd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrD-zg-Hhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <containerView opaque="NO" contentMode="scaleToFill" id="4Nk-mO-j3T">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <segue destination="L70-QR-L6E" kind="embed" identifier="EmbedMapController" id="17U-K6-OPJ"/>
+                    </connections>
+                </containerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9c-2n-HtP">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="5fR-kN-frf"/>
+                        <constraint firstAttribute="height" constant="40" id="hYI-EH-eLl"/>
+                    </constraints>
+                    <state key="normal" image="button-icon-location" backgroundImage="button_explore_white"/>
+                    <connections>
+                        <action selector="gotoUserLocation:" destination="oiJ-Rv-hJ5" eventType="touchUpInside" id="g7V-ev-hJ8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZ6-tp-hWY">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="EpN-1U-0du"/>
+                        <constraint firstAttribute="width" constant="40" id="o2E-Yr-nPs"/>
+                    </constraints>
+                    <state key="normal" image="button-icon-list" backgroundImage="button_explore_white"/>
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="oiJ-Rv-hJ5" eventType="touchUpInside" id="Jqc-I6-PFA"/>
+                    </connections>
+                </button>
+                <pinchGestureRecognizer id="Na5-bv-q8O">
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="oiJ-Rv-hJ5" id="Brt-CE-pY7"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <tapGestureRecognizer id="Aju-HG-j23">
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="oiJ-Rv-hJ5" id="waV-xP-HeV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="5JH-as-AYF">
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="oiJ-Rv-hJ5" id="499-6N-gKC"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="425" y="2156"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="e8J-T1-zKP">
+            <objects>
+                <tabBarController id="iBi-4L-ekd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="woe-Zw-Mc6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Irt-cf-VkD" kind="relationship" relationship="viewControllers" id="jMs-Bf-Q4R"/>
+                        <segue destination="ahW-bQ-nvk" kind="relationship" relationship="viewControllers" id="VuG-eY-XDo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuU-mw-Od5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-604" y="2151"/>
+        </scene>
+        <!--In Collection-->
+        <scene sceneID="xTN-g7-B2i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Irt-cf-VkD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="In Collection" image="button-icon-list" id="oc0-NC-kIe"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KWa-lg-B3H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oiJ-Rv-hJ5" kind="relationship" relationship="rootViewController" id="jWP-De-ir5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Du-Ps-ZZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17.600000000000001" y="2156.5066666666667"/>
+        </scene>
+        <!--Alone-->
+        <scene sceneID="yH9-kh-T7h">
+            <objects>
+                <navigationController id="ahW-bQ-nvk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Alone" image="button-icon-map" id="OwM-T8-Xmo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKQ-nf-KDm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L70-QR-L6E" kind="relationship" relationship="rootViewController" id="Cs5-Xl-Ztg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtN-H9-ikw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="2901"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button-icon-list" width="25" height="25"/>
+        <image name="button-icon-location" width="25" height="25"/>
+        <image name="button-icon-map" width="35" height="35"/>
+        <image name="button_explore_white" width="15" height="15"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cs5-Xl-Ztg"/>
+    </inferredMetricsTieBreakers>
+</document>

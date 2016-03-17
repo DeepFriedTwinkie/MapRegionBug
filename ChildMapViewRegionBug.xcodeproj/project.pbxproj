@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		D28DD6561C9AFE4100665905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6551C9AFE4100665905 /* main.m */; };
 		D28DD6591C9AFE4100665905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6581C9AFE4100665905 /* AppDelegate.m */; };
-		D28DD65C1C9AFE4100665905 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD65B1C9AFE4100665905 /* ViewController.m */; };
-		D28DD65F1C9AFE4100665905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DD65D1C9AFE4100665905 /* Main.storyboard */; };
 		D28DD6611C9AFE4100665905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28DD6601C9AFE4100665905 /* Assets.xcassets */; };
 		D28DD6641C9AFE4100665905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DD6621C9AFE4100665905 /* LaunchScreen.storyboard */; };
+		D28DD66C1C9AFE7500665905 /* Explore_Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DD66B1C9AFE7500665905 /* Explore_Temp.storyboard */; };
+		D28DD6891C9AFEB000665905 /* UIViewController+SearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6721C9AFEB000665905 /* UIViewController+SearchField.m */; };
+		D28DD68B1C9AFEB000665905 /* ExploreCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6771C9AFEB000665905 /* ExploreCollectionViewController.m */; };
+		D28DD68C1C9AFEB000665905 /* ExploreMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6791C9AFEB000665905 /* ExploreMapViewController.m */; };
+		D28DD68D1C9AFEB000665905 /* AnimatingCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD67C1C9AFEB000665905 /* AnimatingCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +23,19 @@
 		D28DD6551C9AFE4100665905 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D28DD6571C9AFE4100665905 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D28DD6581C9AFE4100665905 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D28DD65A1C9AFE4100665905 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D28DD65B1C9AFE4100665905 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D28DD65E1C9AFE4100665905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D28DD6601C9AFE4100665905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D28DD6631C9AFE4100665905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D28DD6651C9AFE4100665905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28DD66B1C9AFE7500665905 /* Explore_Temp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore_Temp.storyboard; sourceTree = "<group>"; };
+		D28DD6711C9AFEB000665905 /* UIViewController+SearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SearchField.h"; sourceTree = "<group>"; };
+		D28DD6721C9AFEB000665905 /* UIViewController+SearchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SearchField.m"; sourceTree = "<group>"; };
+		D28DD6761C9AFEB000665905 /* ExploreCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreCollectionViewController.h; sourceTree = "<group>"; };
+		D28DD6771C9AFEB000665905 /* ExploreCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreCollectionViewController.m; sourceTree = "<group>"; };
+		D28DD6781C9AFEB000665905 /* ExploreMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreMapViewController.h; sourceTree = "<group>"; };
+		D28DD6791C9AFEB000665905 /* ExploreMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreMapViewController.m; sourceTree = "<group>"; };
+		D28DD67B1C9AFEB000665905 /* AnimatingCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatingCollectionReusableView.h; sourceTree = "<group>"; };
+		D28DD67C1C9AFEB000665905 /* AnimatingCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatingCollectionReusableView.m; sourceTree = "<group>"; };
+		D28DD6951C9AFFCF00665905 /* ExploreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +68,10 @@
 		D28DD6531C9AFE4100665905 /* ChildMapViewRegionBug */ = {
 			isa = PBXGroup;
 			children = (
+				D28DD66D1C9AFEB000665905 /* Explore */,
 				D28DD6571C9AFE4100665905 /* AppDelegate.h */,
 				D28DD6581C9AFE4100665905 /* AppDelegate.m */,
-				D28DD65A1C9AFE4100665905 /* ViewController.h */,
-				D28DD65B1C9AFE4100665905 /* ViewController.m */,
-				D28DD65D1C9AFE4100665905 /* Main.storyboard */,
+				D28DD66B1C9AFE7500665905 /* Explore_Temp.storyboard */,
 				D28DD6601C9AFE4100665905 /* Assets.xcassets */,
 				D28DD6621C9AFE4100665905 /* LaunchScreen.storyboard */,
 				D28DD6651C9AFE4100665905 /* Info.plist */,
@@ -77,6 +86,54 @@
 				D28DD6551C9AFE4100665905 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D28DD66D1C9AFEB000665905 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD6941C9AFFCF00665905 /* Protocols */,
+				D28DD66E1C9AFEB000665905 /* Categories */,
+				D28DD6731C9AFEB000665905 /* Controllers */,
+				D28DD67A1C9AFEB000665905 /* Views */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		D28DD66E1C9AFEB000665905 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD6711C9AFEB000665905 /* UIViewController+SearchField.h */,
+				D28DD6721C9AFEB000665905 /* UIViewController+SearchField.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D28DD6731C9AFEB000665905 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD6761C9AFEB000665905 /* ExploreCollectionViewController.h */,
+				D28DD6771C9AFEB000665905 /* ExploreCollectionViewController.m */,
+				D28DD6781C9AFEB000665905 /* ExploreMapViewController.h */,
+				D28DD6791C9AFEB000665905 /* ExploreMapViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D28DD67A1C9AFEB000665905 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD67B1C9AFEB000665905 /* AnimatingCollectionReusableView.h */,
+				D28DD67C1C9AFEB000665905 /* AnimatingCollectionReusableView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D28DD6941C9AFFCF00665905 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D28DD6951C9AFFCF00665905 /* ExploreProtocol.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +195,7 @@
 			files = (
 				D28DD6641C9AFE4100665905 /* LaunchScreen.storyboard in Resources */,
 				D28DD6611C9AFE4100665905 /* Assets.xcassets in Resources */,
-				D28DD65F1C9AFE4100665905 /* Main.storyboard in Resources */,
+				D28DD66C1C9AFE7500665905 /* Explore_Temp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28DD65C1C9AFE4100665905 /* ViewController.m in Sources */,
+				D28DD68C1C9AFEB000665905 /* ExploreMapViewController.m in Sources */,
+				D28DD68D1C9AFEB000665905 /* AnimatingCollectionReusableView.m in Sources */,
+				D28DD68B1C9AFEB000665905 /* ExploreCollectionViewController.m in Sources */,
+				D28DD6891C9AFEB000665905 /* UIViewController+SearchField.m in Sources */,
 				D28DD6591C9AFE4100665905 /* AppDelegate.m in Sources */,
 				D28DD6561C9AFE4100665905 /* main.m in Sources */,
 			);
@@ -158,14 +218,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D28DD65D1C9AFE4100665905 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D28DD65E1C9AFE4100665905 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D28DD6621C9AFE4100665905 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
