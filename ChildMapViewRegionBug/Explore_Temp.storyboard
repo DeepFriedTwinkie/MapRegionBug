@@ -8,16 +8,16 @@
         <!--Explore Map View Controller-->
         <scene sceneID="gcE-Zr-V6g">
             <objects>
-                <viewController id="L70-QR-L6E" customClass="ExploreMapViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="L70-QR-L6E" customClass="ExploreMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CjI-Du-cBB"/>
                         <viewControllerLayoutGuide type="bottom" id="gdh-xJ-UbL"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="5Ho-Sn-Axp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEk-6x-RzZ">
+                            <mapView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEk-6x-RzZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="L70-QR-L6E" id="ToP-AO-Egg"/>
@@ -31,6 +31,7 @@
                             <constraint firstAttribute="trailing" secondItem="MEk-6x-RzZ" secondAttribute="trailing" id="qEH-Wq-hAl"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="mHL-6j-CEf"/>
                     <connections>
                         <outlet property="mapview" destination="MEk-6x-RzZ" id="Naa-8A-yPJ"/>

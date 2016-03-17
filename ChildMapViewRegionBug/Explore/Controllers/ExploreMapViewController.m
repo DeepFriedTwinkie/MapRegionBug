@@ -178,7 +178,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
     CGFloat viewRatio = viewSize.width / viewSize.height;
     CGFloat rectRatio = mapRectSize.width / mapRectSize.height;
     
-    NSLog(@"\n----------------------------------\n%@ Region Changed\nView Aspect:%f\nVisible Map Rect Aspect%f\n\n\n",
+    NSLog(@"\n----------------------------------\n%@ Region Changed\nView Aspect: %f\nVisible Map Rect Aspect: %f\n\n\n",
           inParent,
           viewRatio,
           rectRatio);
