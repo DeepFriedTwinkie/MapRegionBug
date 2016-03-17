@@ -10,7 +10,7 @@ I have created a sample app that demonstrates this by adding an MKPolygon to the
 - A map view in a collection view that behaves incorrectly
 - The same map view not in a collection view that behaves correctly.
 
-I've also created a video that demostrates the issue: https://dl.dropboxusercontent.com/u/16325040/RegionIssues.mov
+I've also created a video that demostrates the issue: [RegionIssues.mov](https://github.com/DeepFriedTwinkie/MapRegionBug/blob/master/RegionIssues.mov?raw=true)
 
 Steps to Reproduce
 ====
