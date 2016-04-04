@@ -192,6 +192,8 @@ static NSString * const reuseIdentifier = @"Cell";
 // ******************** UICollectionViewDataSource ********************
 #pragma mark <UICollectionViewDataSource>
 
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 - (UICollectionReusableView *) collectionView:(UICollectionView *)collectionView
             viewForSupplementaryElementOfKind:(NSString *)kind
                                   atIndexPath:(NSIndexPath *)indexPath {
@@ -212,51 +214,67 @@ static NSString * const reuseIdentifier = @"Cell";
                                                                            _expandContractButton,
                                                                            _gotoUserLocationButton
                                                                            );
+
+            // ****** Map Placement
             [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_exploreMapContainerView]-0-|"
                                                                                      options:0 metrics:nil views:viewsDictionary]];
-            [constraints addObject:[NSLayoutConstraint constraintWithItem:self.exploreMapContainerView
-                                                                attribute:NSLayoutAttributeCenterY
-                                                                relatedBy:NSLayoutRelationEqual
-                                                                   toItem:header
-                                                                attribute:NSLayoutAttributeCenterY
-                                                               multiplier:1.f constant:0.f]];
-
+            
+            if (SYSTEM_VERSION_LESS_THAN(@"8")) {
+                // In iOS 7, constraints between cell subviews and the collection view are ignored.
+                // Instead, simple constrain the map container to the bounds of the header cell
+                // This will result in the map changing size when it's expaneded - oh well
+                [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_exploreMapContainerView]-0-|"
+                                                                                         options:0 metrics:nil views:viewsDictionary]];
+            } else {
+                [constraints addObject:[NSLayoutConstraint constraintWithItem:self.exploreMapContainerView
+                                                                    attribute:NSLayoutAttributeCenterY
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:header
+                                                                    attribute:NSLayoutAttributeCenterY
+                                                                   multiplier:1.f constant:0.f]];
+                
+                #warning ****** iOS 8 Compatibility
+                /* iOS 9 adds the header to the collection view immediately. (Even when a new view is created)
+                 Since the header is not yet in the collection view in iOS 7/8, a constraint cannot be added between the header and the view controller's view
+                 This is a hack to allow the constraint to be added
+                 */
+                if (header.superview != collectionView) {
+                    [collectionView addSubview:header];
+                }
+                
+                // Ensure the size of the map view controller does not change when header is expanded/contracted
+                // So set the container size to the size of the collection view (and adjust for the layout guides)
+                [collectionView addConstraint:[NSLayoutConstraint constraintWithItem:collectionView
+                                                                           attribute:NSLayoutAttributeHeight
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.exploreMapContainerView
+                                                                           attribute:NSLayoutAttributeHeight
+                                                                          multiplier:1.f
+                                                                            constant:(self.topLayoutGuide.length + self.bottomLayoutGuide.length)]];
+            }
+        
             // Make sure the map is not placed on top of other buttons
             [header sendSubviewToBack:self.exploreMapContainerView];
             
-            // Add the expand/contract button
+            
+            // ****** Add the expand/contract button
             [header addSubview:self.expandContractButton];
             [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_expandContractButton]-15-|"
                                                                                      options:0 metrics:nil views:viewsDictionary]];
             [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_expandContractButton]-15-|"
                                                                                      options:0 metrics:nil views:viewsDictionary]];
 
-            // Add the Goto User Location Button
+            
+            
+            // ****** Add the Goto User Location Button
             [header addSubview:self.gotoUserLocationButton];
             [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_gotoUserLocationButton]"
                                                                                      options:0 metrics:nil views:viewsDictionary]];
             [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_gotoUserLocationButton]-15-|"
                                                                                      options:0 metrics:nil views:viewsDictionary]];
 
+            // ****** Add all the constraints
             [header addConstraints:constraints];
-            
-#warning ****** iOS 7/8 Compatibility
-            /* iOS 9 adds the header to the collection view immediately. (Even when a new view is created)
-             Since the header is not yet in the collection view in iOS 7/8, a constraint cannot be added between the header and the view controller's view
-             This is a hack to allow the constraint to be added
-             */
-            if (header.superview != collectionView) {
-                [collectionView addSubview:header];
-            }
-            
-            // Ensure the size of the map view controller does not change when header is expanded/contracted
-            [self.view addConstraint:[NSLayoutConstraint constraintWithItem:collectionView
-                                                                  attribute:NSLayoutAttributeHeight
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.exploreMapContainerView
-                                                                  attribute:NSLayoutAttributeHeight
-                                                                 multiplier:1.f
-                                                                   constant:(self.topLayoutGuide.length + self.bottomLayoutGuide.length)]];
         }
         return header;
     }

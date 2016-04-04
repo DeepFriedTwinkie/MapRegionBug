@@ -129,7 +129,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
     if ([overlay isKindOfClass:[MKPolygon class]]) {
         MKPolygonRenderer * renderer = [[MKPolygonRenderer alloc] initWithPolygon:(MKPolygon *) overlay];
         renderer.fillColor = [UIColorFromRGB(0x222222) colorWithAlphaComponent:0.1];
-        renderer.strokeColor = [UIColorFromRGB(0x111111) colorWithAlphaComponent:0.35];
+        renderer.strokeColor = [UIColor greenColor];
         renderer.lineWidth = 2;
         return renderer;
     }
