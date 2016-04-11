@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iBi-4L-ekd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iBi-4L-ekd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -150,6 +150,7 @@
                     <connections>
                         <segue destination="Irt-cf-VkD" kind="relationship" relationship="viewControllers" id="jMs-Bf-Q4R"/>
                         <segue destination="ahW-bQ-nvk" kind="relationship" relationship="viewControllers" id="VuG-eY-XDo"/>
+                        <segue destination="iV3-c2-Hcs" kind="relationship" relationship="viewControllers" id="yjj-sk-2yX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuU-mw-Od5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,6 +193,140 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtN-H9-ikw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-18" y="2901"/>
+        </scene>
+        <!--Explore Collection View Controller No Child-->
+        <scene sceneID="6Mc-l9-kRS">
+            <objects>
+                <viewController id="p4w-q0-X8T" customClass="ExploreCollectionViewController_NoChild" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5y3-2E-QNE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="tua-zs-MnS">
+                            <size key="itemSize" width="106" height="106"/>
+                            <size key="headerReferenceSize" width="50" height="355"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapHeader" id="ixb-Co-fxB" customClass="AnimatingCollectionReusableView">
+                            <rect key="frame" x="0.0" y="64" width="320" height="355"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQr-o1-MW0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="355"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m16-t7-S1h">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="355"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="p4w-q0-X8T" id="JB2-O0-o0i"/>
+                                            </connections>
+                                        </mapView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="m16-t7-S1h" secondAttribute="trailing" id="Dcm-OM-9yr"/>
+                                        <constraint firstItem="m16-t7-S1h" firstAttribute="top" secondItem="gQr-o1-MW0" secondAttribute="top" id="Hy9-eP-MDg"/>
+                                        <constraint firstAttribute="bottom" secondItem="m16-t7-S1h" secondAttribute="bottom" id="k1L-tB-3aw"/>
+                                        <constraint firstItem="m16-t7-S1h" firstAttribute="leading" secondItem="gQr-o1-MW0" secondAttribute="leading" id="son-NK-aGf"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="gQr-o1-MW0" firstAttribute="height" secondItem="ixb-Co-fxB" secondAttribute="height" placeholder="YES" id="AmS-Lf-Qey"/>
+                                <constraint firstItem="gQr-o1-MW0" firstAttribute="leading" secondItem="ixb-Co-fxB" secondAttribute="leading" id="CL1-ft-9q7"/>
+                                <constraint firstAttribute="trailing" secondItem="gQr-o1-MW0" secondAttribute="trailing" id="Hoc-f6-37J"/>
+                                <constraint firstItem="gQr-o1-MW0" firstAttribute="centerY" secondItem="ixb-Co-fxB" secondAttribute="centerY" id="jio-is-e1d"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="aOh-Jt-xS7" appends="YES" id="Y5J-Dl-JTB"/>
+                                <outletCollection property="gestureRecognizers" destination="ggn-og-qeZ" appends="YES" id="GKQ-gx-xng"/>
+                                <outletCollection property="gestureRecognizers" destination="XZV-Ll-4pw" appends="YES" id="zRW-dn-liC"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="p4w-q0-X8T" id="jex-6c-g3H"/>
+                            <outlet property="delegate" destination="p4w-q0-X8T" id="cKq-DY-X8C"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="jGj-DO-gU3">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="I4g-lM-FRA">
+                            <connections>
+                                <action selector="goToCustomSearch:" destination="p4w-q0-X8T" id="FzQ-Jd-ipP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="5y3-2E-QNE" id="jYZ-kT-gs2"/>
+                        <outlet property="expandContractButton" destination="elN-Dn-4nX" id="rhE-o2-7Ye"/>
+                        <outlet property="gotoUserLocationButton" destination="Ica-1m-i4Y" id="1eg-Rg-GyC"/>
+                        <outlet property="mapPinchGesture" destination="Na5-bv-q8O" id="Afx-rk-Llz"/>
+                        <outlet property="mapSwipeGesture" destination="5JH-as-AYF" id="30W-Rk-ahd"/>
+                        <outlet property="mapTapGesture" destination="Aju-HG-j23" id="jpI-QF-miZ"/>
+                        <outlet property="view" destination="5y3-2E-QNE" id="QTh-0X-Kl5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOj-Gx-fy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elN-Dn-4nX">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="aQV-ho-agl"/>
+                        <constraint firstAttribute="height" constant="40" id="doQ-1Z-Mtc"/>
+                    </constraints>
+                    <state key="normal" image="button-icon-list" backgroundImage="button_explore_white"/>
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="p4w-q0-X8T" eventType="touchUpInside" id="od0-bc-qTD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-1m-i4Y">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="D9A-Mc-Hcg"/>
+                        <constraint firstAttribute="height" constant="40" id="V8w-JW-NEW"/>
+                    </constraints>
+                    <state key="normal" image="button-icon-location" backgroundImage="button_explore_white"/>
+                    <connections>
+                        <action selector="gotoUserLocation:" destination="p4w-q0-X8T" eventType="touchUpInside" id="z6x-aC-fCJ"/>
+                    </connections>
+                </button>
+                <pinchGestureRecognizer id="aOh-Jt-xS7">
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="p4w-q0-X8T" id="ySc-6k-4gk"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <tapGestureRecognizer id="ggn-og-qeZ">
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="p4w-q0-X8T" id="7WI-eI-L0b"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="XZV-Ll-4pw">
+                    <connections>
+                        <action selector="expandContractMapTapped:" destination="p4w-q0-X8T" id="QiF-tQ-BW2"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="542" y="3571"/>
+        </scene>
+        <!--No Child-->
+        <scene sceneID="ZdV-AI-Jsv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iV3-c2-Hcs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="No Child" id="hui-oi-dU3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nro-RX-1tA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p4w-q0-X8T" kind="relationship" relationship="rootViewController" id="obk-hs-WPU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPF-rm-m8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="3571"/>
         </scene>
     </scenes>
     <resources>

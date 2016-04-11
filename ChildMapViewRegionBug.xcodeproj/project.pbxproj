@@ -16,6 +16,7 @@
 		D28DD68B1C9AFEB000665905 /* ExploreCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6771C9AFEB000665905 /* ExploreCollectionViewController.m */; };
 		D28DD68C1C9AFEB000665905 /* ExploreMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD6791C9AFEB000665905 /* ExploreMapViewController.m */; };
 		D28DD68D1C9AFEB000665905 /* AnimatingCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D28DD67C1C9AFEB000665905 /* AnimatingCollectionReusableView.m */; };
+		D2AD0ED81CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AD0ED71CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		D28DD67B1C9AFEB000665905 /* AnimatingCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatingCollectionReusableView.h; sourceTree = "<group>"; };
 		D28DD67C1C9AFEB000665905 /* AnimatingCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatingCollectionReusableView.m; sourceTree = "<group>"; };
 		D28DD6951C9AFFCF00665905 /* ExploreProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreProtocol.h; sourceTree = "<group>"; };
+		D2AD0ED61CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreCollectionViewController_NoChild.h; sourceTree = "<group>"; };
+		D2AD0ED71CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreCollectionViewController_NoChild.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				D28DD6771C9AFEB000665905 /* ExploreCollectionViewController.m */,
 				D28DD6781C9AFEB000665905 /* ExploreMapViewController.h */,
 				D28DD6791C9AFEB000665905 /* ExploreMapViewController.m */,
+				D2AD0ED61CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.h */,
+				D2AD0ED71CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2AD0ED81CBBEF2900CFFF82 /* ExploreCollectionViewController_NoChild.m in Sources */,
 				D28DD68C1C9AFEB000665905 /* ExploreMapViewController.m in Sources */,
 				D28DD68D1C9AFEB000665905 /* AnimatingCollectionReusableView.m in Sources */,
 				D28DD68B1C9AFEB000665905 /* ExploreCollectionViewController.m in Sources */,
@@ -354,6 +360,7 @@
 				D28DD66A1C9AFE4100665905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
